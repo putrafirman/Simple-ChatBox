@@ -39,8 +39,6 @@ while($row = mysql_fetch_row($result))
 {
     echo "<tr>";
 
-    // $row is array... foreach( .. ) puts every element
-    // of $row to $cell variable
     foreach($row as $cell)
         echo "<td>$cell</td>";
 
@@ -54,38 +52,11 @@ mysql_free_result($result);
 
 <?php
 
-//$query = "select * from pesan";
-
-//$hasil = mysql_query($query);
-
-//echo $hasil;
-
-
-//mysql_close($conn);
-
-//mysql_connect($server,$user,$password);
-//@mysql_select_db($database) or die("Unable to select database");
-
-//$query="select * from pesan";
-
-//$result=mysql_query($query);
-
-//$num=mysql_numrows($result);
-
-//mysql_close();
-
-//echo $num;
-
 	if(! $conn ) {
       die('Could not connect: ' . mysql_error());
    }
 
-   //$_COOKIE['test']=2;
-   //$cou = $_COOKIE['test'];
-
    $sql = 'INSERT INTO pesan '.'(iduser, msg,date)'."VALUES ( 1, 'kamu kamu kamuu kamu', '2016-04-28' )";
-
-   //$_COOKIE['test']++;
 
    mysql_select_db($pfname);
    $retval = mysql_query( $sql, $conn );
